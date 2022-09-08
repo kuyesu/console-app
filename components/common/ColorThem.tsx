@@ -30,12 +30,7 @@ function ToggleDarkMode() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <HStack space={2} alignItems="center">
-      <Icon
-        as={Ionicons}
-        name="settings"
-        style={styles.icon}
-        size="8"
-      />
+      <Icon as={Ionicons} name="settings" style={styles.icon} size="8" />
       <Text>Dark</Text>
 
       <Switch
@@ -53,12 +48,11 @@ function ToggleDarkMode() {
 const styles = StyleSheet.create({
   icon: {
     position: "relative",
-    top: -470,
+    top: -370,
     left: 195,
     color: "rgb(6, 182, 212)",
     zIndex: 1,
     // animation: "rotate 6s infinite linear",
-
   },
 });
 
