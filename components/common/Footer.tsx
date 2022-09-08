@@ -11,7 +11,13 @@ import {
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 
-function Footer() {
+interface DahsbordProps {
+  navigation: any;
+}
+function Footer(props: DahsbordProps) {
+  const dashboard = () => {
+    props.navigation.navigate("Dashboard");
+  };
   const [selected, setSelected] = React.useState(1);
   return (
     <NativeBaseProvider>
@@ -29,6 +35,7 @@ function Footer() {
             py="3"
             flex={1}
             onPress={() => setSelected(0)}
+            onPressIn={dashboard}
           >
             <Center>
               <Icon

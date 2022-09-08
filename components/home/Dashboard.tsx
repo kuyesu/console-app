@@ -11,15 +11,21 @@ import {
   Container,
   View,
   ScrollView,
+  NativeBaseProvider,
 } from "native-base";
-// import NativeBaseIcon from "../NativeBaseIcon";
-import ToggleDarkMode from "../common/ColorThem";
-import VoiceSpeaking from "../common/Voice";
 import Footer from "../common/Footer";
 import { StyleSheet } from "react-native";
-function HomeScreen() {
+import Header from "../common/Header";
+function Dashboard() {
   return (
     <View style={{ flex: 1 }}>
+      <View style={styles.home} flexDirection="column">
+        <NativeBaseProvider>
+          <Center flex={1} px="3">
+            <Header />
+          </Center>
+        </NativeBaseProvider>
+      </View>
       <View style={styles.home} flexDirection="column">
         <HStack>
           <VStack space={5} alignItems="center">
@@ -33,7 +39,7 @@ function HomeScreen() {
                 }}
                 shadow={"3"}
               >
-                <VoiceSpeaking />
+                {/* content here */}
               </Center>
               {/* footer goes here */}
             </Stack>
@@ -43,7 +49,7 @@ function HomeScreen() {
       </View>
       {/* <ScrollView>main</ScrollView> */}
       <View style={styles.footer} flexDirection="column">
-        <Footer />
+        <Footer navigation={undefined} />
       </View>
     </View>
   );
@@ -67,4 +73,4 @@ const styles = StyleSheet.create({
     minWidth: 360,
   },
 });
-export default HomeScreen;
+export default Dashboard;

@@ -1,19 +1,18 @@
 import React from "react";
 import { Center, NativeBaseProvider } from "native-base";
 import "react-native-reanimated";
-import HomeScreen from "./components/home/Home";
+import HomeScreen from "./components/home/HomeScreen";
+import Dashboard from "./components/home/Dashboard";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import NavigatorApp from "./components/navigation/Navigator";
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
     <NativeBaseProvider>
-      <Center
-        _dark={{ bg: "blueGray.900" }}
-        _light={{ bg: "blueGray.50" }}
-        px={4}
-        flex={1}
-      >
-        <HomeScreen />
-      </Center>
+      {/* <HomeScreen /> */}
+      <NavigatorApp />
     </NativeBaseProvider>
   );
 }
